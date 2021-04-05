@@ -5,12 +5,13 @@
         <a href="#" @click.prevent="$emit('click')">
           <i class="material-icons black-text">dehaze</i>
         </a>
-        <span class="black-text">12.12.12</span>
+        <span class="black-text">{{ date | date('datetime') }}</span>
       </div>
 
       <ul class="right hide-on-small-and-down">
         <li>
           <a
+            ref="dropdown"
             class="dropdown-trigger black-text"
             href="#"
             data-target="dropdown"
@@ -21,13 +22,13 @@
 
           <ul id='dropdown' class='dropdown-content'>
             <li>
-              <a href="#" class="black-text">
+              <router-link to="/profile" class="black-text">
                 <i class="material-icons">account_circle</i>Профиль
-              </a>
+              </router-link>
             </li>
             <li class="divider" tabindex="-1"></li>
             <li>
-              <a href="#" class="black-text">
+              <a href="#" class="black-text" @click.prevent="logout">
                 <i class="material-icons">assignment_return</i>Выйти
               </a>
             </li>
@@ -40,7 +41,36 @@
 
 <script>
 export default {
-name: "Navbar"
+  name: "Navbar",
+  data: () => ({
+    date: new Date(),
+    //Очищаем SetInterval
+    interval: null,
+    dropdown: null
+  }),
+  methods: {
+    logout() {
+      this.$router.push('/login?message=logout')
+    }
+  },
+  mounted() {
+    //Интервал времени для поля Date
+    this.interval = setInterval(() => {
+      this.date = new Date
+    }, 1000)
+
+    //Активируем dropdown
+    this.dropdown = M.Dropdown.init(this.$refs.dropdown, {
+      constrainWidth: false
+    })
+  },
+  beforeDestroy() {
+    //При удалении Layout очищаем параметры
+    clearInterval(this.interval)
+    if (this.dropdown && this.dropdown.destroy) {
+      this.dropdown.destroy()
+    }
+  }
 }
 </script>
 

@@ -18,6 +18,7 @@ export default {
   name: "Sidebar",
   props: ['value'],
   data: () => ({
+    //Выводим список сайд бара
     links: [
       {title: 'Счет', url: '/', exact: true},
       {title: 'История', url: '/history'},
