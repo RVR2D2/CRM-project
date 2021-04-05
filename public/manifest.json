@@ -3,14 +3,14 @@
   "short_name": "vue-youtube",
   "icons": [
     {
-      "src": "./img/icons/android-chrome-192x192.png",
+      "src": "public/favicn.ico",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "ico"
     },
     {
-      "src": "./img/icons/android-chrome-512x512.png",
+      "src": "public/favicn.ico",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "ico"
     }
   ],
   "start_url": "./index.html",
