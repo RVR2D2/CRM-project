@@ -56,7 +56,6 @@ export default {
 
       const percent = 100 * spend / cat.limit
       const progressPercent = percent > 100 ? 100 : percent
-      console.log(progressPercent)
       const progressColor = percent < 60 ? 'green' : percent < 100 ? 'yellow' : 'red'
 
       const tooltipValue = cat.limit - spend
