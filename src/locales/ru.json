@@ -5,7 +5,10 @@
   "Name": "Имя",
   "Menu_Bill": "Счет",
   "Menu_History": "История",
+  "Detail_Title": "Запись",
   "Menu_Planing": "Планирование",
   "Menu_Record": "Новая запись",
-  "Menu_Category": "Категории"
+  "Menu_Category": "Категории",
+  "Login": "Логин",
+  "Register": "Регистрация"
 }

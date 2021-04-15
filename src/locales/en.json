@@ -5,7 +5,10 @@
   "Name": "Name",
   "Menu_Bill": "Bill",
   "Menu_History": "History",
+  "Detail_Title": "Detail",
   "Menu_Planing": "Planing",
   "Menu_Record": "New Record",
-  "Menu_Category": "Categories"
+  "Menu_Category": "Categories",
+  "Login": "Login",
+  "Register": "Register"
 }
